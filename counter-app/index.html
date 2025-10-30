@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="fa-IR" dir="rtl">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>شمارنده</title>
+
+    <!-- Persian font (Vazirmatn) -->
+    <link href="https://cdn.font-store.ir/nika.css" rel="stylesheet" />
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <main class="wrap" aria-labelledby="title">
+      <section class="card" role="region">
+        <h1 id="title" class="title">شمارنده ساده من</h1>
+
+        <div class="display" aria-live="polite">
+          <div class="value" aria-label="مقدار شمارنده">0</div>
+        </div>
+
+        <div class="controls" aria-label="دکمه‌های کنترل">
+          <button class="btn btn--inc" type="button" aria-disabled="true">
+            افزایش
+          </button>
+          <div class="count-slot">اینجا مقدار نمایش داده می‌شود</div>
+          <button class="btn btn--dec" type="button" aria-disabled="true">
+            کاهش
+          </button>
+        </div>
+
+        <div class="row">
+          <button class="btn btn--reset" type="button" aria-disabled="true">
+            ریست
+          </button>
+        </div>
+
+        <footer>
+          <a href="https://ghorbany.dev" target="_blank">Ghorbany.DEV</a>
+        </footer>
+      </section>
+    </main>
+  </body>
+</html>
