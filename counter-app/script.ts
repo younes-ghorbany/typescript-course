@@ -1,1 +1,1 @@
-console.log("Hello World 🚀");
+const incrementBtn = document.getElementById("incBtn");
