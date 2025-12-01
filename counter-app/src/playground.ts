@@ -61,3 +61,29 @@ let id: bigint = 123n;
 id = 456n; //OK
 id = BigInt(3); //OK
 id = 10; //Error
+
+//Symbol
+const id1 = Symbol("user");
+const id2 = Symbol("user");
+
+console.log(id1 === id2); // false
+
+const token = Symbol("token");
+
+const user1 = {
+  name: "Younes",
+  [token]: "secret-token-123",
+};
+
+console.log(user[token]); // secret-token-123
+
+const START = Symbol("START");
+const STOP = Symbol("STOP");
+
+function run(state: symbol) {
+  if (state === START) console.log("Started");
+}
+
+let s: symbol = Symbol();
+
+s = Symbol(22);
