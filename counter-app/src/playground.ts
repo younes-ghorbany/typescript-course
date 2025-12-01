@@ -1,5 +1,7 @@
-console.log("Hello World! 🌻");
+//Implicit type
+let review = 5;
+let greeting = "Hello"; //string
 
-console.log("Ghorbany.DEV 😄");
-
-console.log("Hello tsx..");
+//Explicit type
+let age: number = 33;
+let fullname: string = "Younes Ghorbany";
