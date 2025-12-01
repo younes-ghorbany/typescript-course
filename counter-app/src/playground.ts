@@ -44,3 +44,20 @@ y = undefined; //OK
 
 let user: string | null = null;
 user = "Younes";
+
+//bigint
+const big1 = 131321654884541654654654654n;
+
+const big2 = BigInt(42);
+
+const a = 10n;
+const b = 5;
+
+// console.log(a + b);
+console.log(a + BigInt(b)); //OK
+
+let id: bigint = 123n;
+
+id = 456n; //OK
+id = BigInt(3); //OK
+id = 10; //Error
