@@ -87,3 +87,11 @@ function run(state: symbol) {
 let s: symbol = Symbol();
 
 s = Symbol(22);
+
+//Void
+
+let z: void = undefined;
+
+function sayHello(): void {
+  console.log("Hello");
+}
