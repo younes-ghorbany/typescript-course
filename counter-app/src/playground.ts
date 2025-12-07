@@ -1,97 +1,18 @@
-/*Primitive Types:
-  number
-  string
-  boolean
-  null
-  undefined
-  void
-  bigint
-  symbol
-*/
+let names: string[] = ["Younes", "Hamed", "Mohammad"];
 
-//number
-let age: number = 33;
-age = 25;
+let ages: number[] = [33, 40, 22];
 
-//string
-let fullname: string = "Younes Ghorbany";
-fullname = "Ali";
+names.push("Samira");
+// names.push(22);
 
-let hello: string;
-hello = "World";
+ages.push(23);
+// ages.push("Hello");
 
-//boolean
-let isActive: boolean = true;
-isActive = false;
+let fruits = ["apples", "orange", "banana"];
 
-//null && undefined
-let car;
-console.log(car);
+fruits.push("mango");
+// fruits.push(false);
 
-let currentUser = { name: "Younes" };
+const f = fruits[3];
 
-//logout
-currentUser = null;
-
-let x: null;
-let y: undefined;
-
-x = null; //OK
-// x = 12; //Error
-
-y = undefined; //OK
-// y = "Hello"; //Error
-
-let user: string | null = null;
-user = "Younes";
-
-//bigint
-const big1 = 131321654884541654654654654n;
-
-const big2 = BigInt(42);
-
-const a = 10n;
-const b = 5;
-
-// console.log(a + b);
-console.log(a + BigInt(b)); //OK
-
-let id: bigint = 123n;
-
-id = 456n; //OK
-id = BigInt(3); //OK
-id = 10; //Error
-
-//Symbol
-const id1 = Symbol("user");
-const id2 = Symbol("user");
-
-console.log(id1 === id2); // false
-
-const token = Symbol("token");
-
-const user1 = {
-  name: "Younes",
-  [token]: "secret-token-123",
-};
-
-console.log(user[token]); // secret-token-123
-
-const START = Symbol("START");
-const STOP = Symbol("STOP");
-
-function run(state: symbol) {
-  if (state === START) console.log("Started");
-}
-
-let s: symbol = Symbol();
-
-s = Symbol(22);
-
-//Void
-
-let z: void = undefined;
-
-function sayHello(): void {
-  console.log("Hello");
-}
+console.log(f);
