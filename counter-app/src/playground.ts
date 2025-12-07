@@ -16,3 +16,7 @@ fruits.push("mango");
 const f = fruits[3];
 
 console.log(f);
+
+let myArr = [1, true, "younes"];
+
+const b = myArr[0];
