@@ -1,22 +1,27 @@
-let names: string[] = ["Younes", "Hamed", "Mohammad"];
+function sum(a: number, b: number): number {
+  return a + b;
+}
 
-let ages: number[] = [33, 40, 22];
+const result = sum(2, 3);
 
-names.push("Samira");
-// names.push(22);
+console.log(result);
 
-ages.push(23);
-// ages.push("Hello");
+//Arrow function
+const sub = (a: number, b: number): number => {
+  return a - b;
+};
 
-let fruits = ["apples", "orange", "banana"];
+sub(3, 9);
+// sub(true, '9');
+// sub(2, '9');
 
-fruits.push("mango");
-// fruits.push(false);
+function sumAll(items: number[]): void {
+  const total = items.reduce((a, c) => a + c, 0);
+  console.log(total);
+}
 
-const f = fruits[3];
+sumAll([2, 3, 4, 5, 6]);
 
-console.log(f);
-
-let myArr = [1, true, "younes"];
-
-const b = myArr[0];
+function greeting(name: string, greeting: string) {
+  return `${greeting}, ${name}`;
+}
