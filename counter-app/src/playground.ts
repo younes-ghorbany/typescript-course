@@ -1,27 +1,18 @@
-function sum(a: number, b: number): number {
-  return a + b;
+let age: any;
+
+age = 30;
+age = false;
+
+let title;
+
+title = 22;
+title = [1, 3, 4];
+
+let arr: any[] = ["Hello", 22, false, null];
+arr.push({ id: 2, name: "younes" });
+
+function sum(value: any): any {
+  return value + value;
 }
 
-const result = sum(2, 3);
-
-console.log(result);
-
-//Arrow function
-const sub = (a: number, b: number): number => {
-  return a - b;
-};
-
-sub(3, 9);
-// sub(true, '9');
-// sub(2, '9');
-
-function sumAll(items: number[]): void {
-  const total = items.reduce((a, c) => a + c, 0);
-  console.log(total);
-}
-
-sumAll([2, 3, 4, 5, 6]);
-
-function greeting(name: string, greeting: string) {
-  return `${greeting}, ${name}`;
-}
+const result1 = sum("hello");
