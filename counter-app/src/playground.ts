@@ -1,18 +1,66 @@
-let age: any;
+// let user: {
+//   name: string;
+//   age: number;
+// };
 
-age = 30;
-age = false;
+// ✅
+// user = {
+//   name: "Younes",
+//   age: 33,
+// };
 
-let title;
+// ❌ Error
+// user = {
+//   name: "Younes",
+//   age: "33",
+// };
 
-title = 22;
-title = [1, 3, 4];
+// let user: {
+//   name: string;
+//   age?: number;
+// };
+//
+// user = {
+//   name: "Younes",
+// };
+//
+// user = {
+//   name: "Younes",
+//   age: 33,
+// };
+//
+// let product: {
+//   id: number;
+//   title: string;
+//   tags: string[];
+//   getPrice: () => number;
+// };
 
-let arr: any[] = ["Hello", 22, false, null];
-arr.push({ id: 2, name: "younes" });
+//Object type in functions
+// function printUser(user: { name: string; age: number }) {
+//   console.log(`Name: ${user.name}`);
+//   console.log(`Age: ${user.age}`);
+// }
 
-function sum(value: any): any {
-  return value + value;
-}
+// ✅
+// printUser({ name: "Younes", age: 33 });
 
-const result1 = sum("hello");
+// ❌
+// printUser({ name: "Younes" });
+
+//Optional property in function
+// function greet(user: { name: string; age?: number }) {
+//   console.log(`Hello ${user.name}`);
+// }
+
+//Object Literal
+// const user = {
+//   name: "Younes",
+//   age: 33
+// };
+
+//Object Type
+// let user: {
+//   name: string;
+//   age: number;
+// }
