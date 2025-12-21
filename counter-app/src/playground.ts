@@ -1,31 +1,52 @@
-// let scores: number[] = [10,20,30];
+const STATUS_PENDING = "pending";
+const STATUS_SUCCESS = "success";
+const STATUS_ERROR = "error";
 
-// let user: [string, number];
-
-// ✅
-// user = ["Younes", 33];
-
-// ❌
-// user = [28, "Younes"];
-// user = ["Younes"];
-
-//RESTful API
-// ["success", 200]
-
-let response: [string, number];
-
-response = ["success", 200];
-
-// Tuple in functions
-
-function getUser(): [string, number] {
-  return ["Younes", 33];
+//Enumeration -> Enum
+enum Status {
+  Pending,
+  Success,
+  Error,
 }
 
-let user: [string, number] = ["Younes", 33];
+Status.Pending; //0
+Status.Success; //1
+Status.Error; //2
 
-const userName = user[0];
-const userAge = user[1];
+let currentStatus: Status = Status.Pending;
 
-// ❌
-user.push(30);
+// currentStatus = "pending"; ❌
+
+enum HttpStatus {
+  OK = 200,
+  NotFound = 404,
+  ServerError = 500,
+}
+
+let responseStatus: HttpStatus = HttpStatus.OK;
+
+enum UserRole {
+  Admin = "admin",
+  User = "user",
+  Guest = "guest",
+}
+
+function checkAccess(role: UserRole) {
+  if (role === UserRole.Admin) {
+    console.log("Full access");
+  }
+}
+
+//Enum in functions
+
+enum OrderStatus {
+  Pending = "pending",
+  Paid = "paid",
+  Shipped = "shipped",
+}
+
+function updateOrder(status: OrderStatus) {
+  console.log(`Order is ${status}`);
+}
+
+updateOrder(OrderStatus.Shipped);
