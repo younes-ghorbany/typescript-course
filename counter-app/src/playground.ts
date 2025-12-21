@@ -1,66 +1,31 @@
-// let user: {
-//   name: string;
-//   age: number;
-// };
+// let scores: number[] = [10,20,30];
+
+// let user: [string, number];
 
 // ✅
-// user = {
-//   name: "Younes",
-//   age: 33,
-// };
-
-// ❌ Error
-// user = {
-//   name: "Younes",
-//   age: "33",
-// };
-
-// let user: {
-//   name: string;
-//   age?: number;
-// };
-//
-// user = {
-//   name: "Younes",
-// };
-//
-// user = {
-//   name: "Younes",
-//   age: 33,
-// };
-//
-// let product: {
-//   id: number;
-//   title: string;
-//   tags: string[];
-//   getPrice: () => number;
-// };
-
-//Object type in functions
-// function printUser(user: { name: string; age: number }) {
-//   console.log(`Name: ${user.name}`);
-//   console.log(`Age: ${user.age}`);
-// }
-
-// ✅
-// printUser({ name: "Younes", age: 33 });
+// user = ["Younes", 33];
 
 // ❌
-// printUser({ name: "Younes" });
+// user = [28, "Younes"];
+// user = ["Younes"];
 
-//Optional property in function
-// function greet(user: { name: string; age?: number }) {
-//   console.log(`Hello ${user.name}`);
-// }
+//RESTful API
+// ["success", 200]
 
-//Object Literal
-// const user = {
-//   name: "Younes",
-//   age: 33
-// };
+let response: [string, number];
 
-//Object Type
-// let user: {
-//   name: string;
-//   age: number;
-// }
+response = ["success", 200];
+
+// Tuple in functions
+
+function getUser(): [string, number] {
+  return ["Younes", 33];
+}
+
+let user: [string, number] = ["Younes", 33];
+
+const userName = user[0];
+const userAge = user[1];
+
+// ❌
+user.push(30);
