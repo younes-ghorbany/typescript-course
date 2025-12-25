@@ -1,52 +1,44 @@
-const STATUS_PENDING = "pending";
-const STATUS_SUCCESS = "success";
-const STATUS_ERROR = "error";
+// ** -> Unknown Type
+// let data: any;
+// let value: unknown;
+//
+// data.toUpperCase();
+// value.toUpperCase();
 
-//Enumeration -> Enum
-enum Status {
-  Pending,
-  Success,
-  Error,
+// let value: unknown;
+//
+// if (typeof value === "string") {
+//   console.log(value.toUpperCase());
+// }
+
+// function parseData(data: unknown) {
+//   if (typeof data === "string") {
+//     return data.toUpperCase();
+//   }
+//
+//   return "Invalid data";
+// }
+//
+// let result1 = parseData("younes ghorbany");
+// let result2 = parseData(22);
+//
+// console.log(result1);
+// console.log(result2);
+
+// ** -> Never Type
+
+function throwError(message: string): never {
+  throw new Error(message);
 }
 
-Status.Pending; //0
-Status.Success; //1
-Status.Error; //2
-
-let currentStatus: Status = Status.Pending;
-
-// currentStatus = "pending"; ❌
-
-enum HttpStatus {
-  OK = 200,
-  NotFound = 404,
-  ServerError = 500,
+function infiniteLoop(): never {
+  while (true) {}
 }
 
-let responseStatus: HttpStatus = HttpStatus.OK;
-
-enum UserRole {
-  Admin = "admin",
-  User = "user",
-  Guest = "guest",
+function log(): void {
+  console.log("Hello");
 }
 
-function checkAccess(role: UserRole) {
-  if (role === UserRole.Admin) {
-    console.log("Full access");
-  }
+function crash(): never {
+  throw new Error("Boom");
 }
-
-//Enum in functions
-
-enum OrderStatus {
-  Pending = "pending",
-  Paid = "paid",
-  Shipped = "shipped",
-}
-
-function updateOrder(status: OrderStatus) {
-  console.log(`Order is ${status}`);
-}
-
-updateOrder(OrderStatus.Shipped);
