@@ -1,44 +1,60 @@
-// ** -> Unknown Type
-// let data: any;
-// let value: unknown;
-//
-// data.toUpperCase();
-// value.toUpperCase();
-
-// let value: unknown;
-//
-// if (typeof value === "string") {
-//   console.log(value.toUpperCase());
-// }
-
-// function parseData(data: unknown) {
-//   if (typeof data === "string") {
-//     return data.toUpperCase();
-//   }
-//
-//   return "Invalid data";
+// interface User {
+//   name: string;
+//   age?: number;
 // }
 //
-// let result1 = parseData("younes ghorbany");
-// let result2 = parseData(22);
-//
-// console.log(result1);
-// console.log(result2);
+// const user: User = {
+//   name: "Younes",
+//   age: 33,
+// };
 
-// ** -> Never Type
+// const user: User = {
+//   name: "Younes",
+// };
 
-function throwError(message: string): never {
-  throw new Error(message);
+interface User {
+  name: string;
+  age: number;
+  greet(): void;
 }
 
-function infiniteLoop(): never {
-  while (true) {}
+const user: User = {
+  name: "Younes",
+  age: 33,
+  greet() {
+    console.log("Hello!");
+  },
+};
+
+//Interface in function
+interface Product {
+  title: string;
+  price: number;
 }
 
-function log(): void {
-  console.log("Hello");
+function printProduct(product: Product) {
+  console.log(product.title, product.price);
 }
 
-function crash(): never {
-  throw new Error("Boom");
+//Extend Inteface
+interface BaseUser {
+  name: string;
 }
+
+interface BaseUser {
+  age: number;
+}
+
+const myUser: BaseUser = {
+  name: "Younes",
+  age: 33,
+};
+
+interface Admin extends BaseUser {
+  premissins: string[];
+}
+
+// const admin: Admin = {
+//   name: "Younes",
+//   premissins: ["read", "write"],
+// };
