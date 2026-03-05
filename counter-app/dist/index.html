@@ -15,7 +15,9 @@
         <h1 id="title" class="title">شمارنده ساده من</h1>
 
         <div class="display" aria-live="polite">
-          <div class="value" aria-label="مقدار شمارنده">0</div>
+          <div id="displayValue" class="value" aria-label="مقدار شمارنده">
+            0
+          </div>
         </div>
 
         <div class="controls" aria-label="دکمه‌های کنترل">
@@ -27,7 +29,9 @@
           >
             افزایش
           </button>
-          <div class="count-slot">اینجا مقدار نمایش داده می‌شود</div>
+          <div id="countSlot" class="count-slot">
+            اینجا مقدار نمایش داده می‌شود
+          </div>
           <button
             id="decBtn"
             class="btn btn--dec"
@@ -39,7 +43,12 @@
         </div>
 
         <div class="row">
-          <button class="btn btn--reset" type="button" aria-disabled="true">
+          <button
+            id="resetBtn"
+            class="btn btn--reset"
+            type="button"
+            aria-disabled="true"
+          >
             ریست
           </button>
         </div>
