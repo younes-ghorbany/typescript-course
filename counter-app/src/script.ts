@@ -17,3 +17,32 @@ const countSlot = document.getElementById("countSlot") as HTMLDivElement;
 
 // Type Assertion -> Not NULL (!)
 // const incBtn = document.getElementById("incBtn")!;
+
+//INFO State variable
+let counter: number = 0;
+
+//INFO Updates the display with the current counter value
+function updateDisplay(value: number): void {
+  displayValue.textContent = value.toString();
+  countSlot.textContent = `شمارش فعلی : ${value}`;
+}
+
+//INFO Updates the buttons state based on counter value
+function updateButtons(): void {
+  decrementBtn.disabled = counter === 0;
+  resetBtn.disabled = counter === 0;
+}
+
+//INFO Increments the counter
+function increment(): void {
+  counter += 1; // counter = counter + 1;
+  updateDisplay(counter);
+  updateButtons();
+}
+
+//INFO Decrements the counter
+function decrement(): void {
+  if (counter > 0) counter -= 1;
+  updateDisplay(counter);
+  updateButtons();
+}
