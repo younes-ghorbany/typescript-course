@@ -46,3 +46,26 @@ function decrement(): void {
   updateDisplay(counter);
   updateButtons();
 }
+
+//INFO Resets the counter to ZERO
+function reset(): void {
+  counter = 0;
+  updateDisplay(counter);
+  updateButtons();
+}
+
+//INFO Event listeners
+incrementBtn.addEventListener("click", () => {
+  increment();
+  console.log(`افزایش دادیم : ${counter}`);
+});
+
+decrementBtn.addEventListener("click", () => {
+  decrement();
+  console.log(`کاهش دادیم : ${counter}`);
+});
+
+resetBtn.addEventListener("click", () => {
+  reset();
+  console.log(`ریست نمائیدیم 😏`);
+});
