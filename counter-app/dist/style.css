@@ -107,6 +107,12 @@ body {
     border-color 0.2s ease;
 }
 
+.btn:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+  transform: none;
+}
+
 .btn:hover {
   transform: translateY(-1px);
 }
