@@ -12,6 +12,9 @@ type CounterValue = number;
 
 let counter: CounterValue = 0;
 
+//INFO Union type
+type CounterAction = "increment" | "decrement" | "reset";
+
 //INFO Updates the display with the current counter value
 function updateDisplay(value: CounterValue): void {
   displayValue.textContent = value.toString();
@@ -24,39 +27,37 @@ function updateButtons(): void {
   resetBtn.disabled = counter === 0;
 }
 
-//INFO Increments the counter
-function increment(): void {
-  counter += 1; // counter = counter + 1;
-  updateDisplay(counter);
-  updateButtons();
-}
+function handleCounterAction(action: CounterAction): void {
+  switch (action) {
+    case "increment":
+      counter += 1;
+      break;
 
-//INFO Decrements the counter
-function decrement(): void {
-  if (counter > 0) counter -= 1;
-  updateDisplay(counter);
-  updateButtons();
-}
+    case "decrement":
+      if (counter > 0) counter -= 1;
+      break;
 
-//INFO Resets the counter to ZERO
-function reset(): void {
-  counter = 0;
+    case "reset":
+      counter = 0;
+      break;
+  }
+
   updateDisplay(counter);
   updateButtons();
 }
 
 //INFO Event listeners
 incrementBtn.addEventListener("click", () => {
-  increment();
+  handleCounterAction("increment");
   console.log(`افزایش دادیم : ${counter}`);
 });
 
 decrementBtn.addEventListener("click", () => {
-  decrement();
+  handleCounterAction("decrement");
   console.log(`کاهش دادیم : ${counter}`);
 });
 
 resetBtn.addEventListener("click", () => {
-  reset();
+  handleCounterAction("reset");
   console.log(`ریست نمائیدیم 😏`);
 });

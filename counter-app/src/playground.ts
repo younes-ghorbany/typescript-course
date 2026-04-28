@@ -1,18 +1,14 @@
-// Type Alias
+// Union Type
 
-type User = {
-  name: string;
-  age: number;
-};
+type Action = "inc" | "dec" | "reset";
 
-function printUser(user: User) {
-  console.log(`${user.name} is ${user.age}`);
-}
+let value: string | number;
+value = "Hello"; //OK
+value = 42; //OK
+// value = false; //Error
+//
+// --------------------------
 
-function saveUser(user: User) {
-  console.log("User saved!");
-}
+type Gender = "male" | "female" | "unknown";
 
-type ID = number;
-
-let productId: ID = 42;
+type OrderStatus = "pending" | "shipped" | "delivered";
