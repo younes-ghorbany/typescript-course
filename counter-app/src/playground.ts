@@ -1,14 +1,35 @@
-// Union Type
+//Function typing
+function sum(a: number, b: number): number {
+  return a + b;
+}
 
-type Action = "inc" | "dec" | "reset";
+//Function overloads
 
-let value: string | number;
-value = "Hello"; //OK
-value = 42; //OK
-// value = false; //Error
-//
-// --------------------------
+interface User {
+  id: number;
+  username: string;
+}
 
-type Gender = "male" | "female" | "unknown";
+const users: User[] = [
+  { id: 1, username: "Younes" },
+  { id: 2, username: "Amir" },
+];
 
-type OrderStatus = "pending" | "shipped" | "delivered";
+//Function Overloads
+function findUser(value: number): User | undefined;
+function findUser(value: string): User | undefined;
+
+function parse(value: string): number;
+function parse(value: number): string;
+
+//Configuration
+function findUser(value: number | string) {
+  if (typeof value === "number") {
+    return users.find((u) => u.id === value);
+  }
+  return users.find((u) => u.username === value);
+}
+
+//Calling the functions
+findUser(1);
+findUser("Amir");
