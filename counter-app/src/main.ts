@@ -1,8 +1,10 @@
-import { incrementBtn, decrementBtn, resetBtn } from "./dom";
-
-import { handleCounterAction } from "./counter";
-
-import { AppLogger } from "./logger";
+import {
+  incrementBtn,
+  decrementBtn,
+  resetBtn,
+  handleCounterAction,
+  AppLogger,
+} from "./core/index.js";
 
 AppLogger.info("Application started. 🚀");
 

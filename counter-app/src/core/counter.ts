@@ -1,9 +1,10 @@
-import type { CounterValue, CounterAction } from "./types";
+import type { CounterValue, CounterAction } from "./types.js";
 
-import { AppLogger } from "./logger";
+import { AppLogger } from "./logger.js";
 
-import { displayValue, countSlot, decrementBtn, resetBtn } from "./dom";
+import { displayValue, countSlot, decrementBtn, resetBtn } from "./dom.js";
 
+//INFO: Current state of the counter
 let counter: CounterValue = 0;
 
 //INFO Updates the display with the current counter value
@@ -18,6 +19,7 @@ function updateButtons(): void {
   resetBtn.disabled = counter === 0;
 }
 
+//INFO Handles all counter actions
 export function handleCounterAction(action: CounterAction): void {
   switch (action) {
     case "increment":

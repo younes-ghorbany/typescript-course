@@ -1,4 +1,4 @@
-import { LogLevel } from "./types";
+import { LogLevel } from "./types.js";
 
 interface Logger {
   info(message: string, data?: any): void;
@@ -10,6 +10,7 @@ interface Logger {
   log(message: string, level: LogLevel): void;
 }
 
+//INFO Generic log method used internally by other logging functions.
 export const AppLogger: Logger = {
   log(message: string, level: LogLevel = LogLevel.Info): void {
     const colors = {
@@ -20,15 +21,17 @@ export const AppLogger: Logger = {
 
     console.log(`%c[${level}] %c${message}`, colors[level], "color:inherit");
   },
-
+  //INFO Logs informational messages
   info(message, data?) {
     this.log(message, LogLevel.Info);
     if (data) console.dir(data);
   },
+  //INFO Logs warning messages
   warn(message, data?) {
     this.log(message, LogLevel.Warn);
     if (data) console.dir(data);
   },
+  //INFO Logs error messages
   error(message, data?) {
     this.log(message, LogLevel.Error);
     if (data) console.dir(data);
