@@ -12,14 +12,19 @@ interface Logger {
 
 //INFO Generic log method used internally by other logging functions.
 export const AppLogger: Logger = {
-  log(message: string, level: LogLevel = LogLevel.Info): void {
+  log(message: string, level?: LogLevel): void {
+    const finalLevel = level ?? LogLevel.Info;
     const colors = {
       [LogLevel.Info]: "color: #00bfff; font-weight:bold",
       [LogLevel.Warn]: "color: #ffaa00; font-weight:bold",
       [LogLevel.Error]: "color: #ff4444; font-weight:bold",
     };
 
-    console.log(`%c[${level}] %c${message}`, colors[level], "color:inherit");
+    console.log(
+      `%c[${finalLevel}] %c${message}`,
+      colors[finalLevel],
+      "color:inherit",
+    );
   },
   //INFO Logs informational messages
   info(message, data?) {

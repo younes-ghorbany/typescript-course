@@ -1,71 +1,23 @@
-//INFO More Type Assertions 🚀
+//INFO Nullish Coalescing
 
-/*
- * ✅ as const-----------------------------------------------
- */
-const color01 = "red"; // -> string
+<input type="number" id="initial-value" />
 
-const color02 = "red" as const; // -> "red"
+const initialInput = document.querySelector<HTMLInputElement>("#initial-value");
 
-const user = {
-  name: "Younes",
-  age: 34,
-} as const;
+const initialValue = initialInput?.value ?? "0";
 
-user.age = 35; // ❌ error
+//initialInput?.value -> undefined -> no crash 
+//initialInput.value -> null -> runtime error -> crash
 
-/*
- * ✅ as [type]-----------------------------------------------
- */
+console.log(initialValue);
 
-let value: unknown = "hello";
+const username = user?.name ?? "Guest";
 
-let length = (value as string).length; //value as string
+// ?? - || OR
 
-/*
- * ✅ as any-----------------------------------------------
- */
+const count = 0;
+console.log(count || 10); //10
 
-let data: any = "hello";
+console.log(count ?? 10); //0
 
-(data as any).doSomething();
 
-let x = "hello" as any;
-
-x = 123;
-x.foo.bar.baz();
-
-/*
- * ✅ satisfies -----------------------------------------------
- */
-
-type User = {
-  name: string;
-  age: number;
-};
-
-const user02 = {
-  name: "Ali",
-  age: 20,
-} satisfies User;
-
-const user03 = {
-  name: "Ali",
-  age: "20",
-} satisfies User;
-
-/*
- * ✅ Null Assertion ! -----------------------------------------------
- */
-
-let username: string | null;
-
-console.log(username!.length);
-
-function printName(name?: string) {
-  console.log(name!.toUpperCase());
-}
-
-let user05: string | null = null;
-
-console.log(user!.length); // 💣 runtime error
