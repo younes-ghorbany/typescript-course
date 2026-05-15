@@ -1,8 +1,8 @@
-import type { CounterValue, CounterAction } from "./types.js";
+import type { CounterValue, CounterAction } from "./types";
 
-import { AppLogger } from "./logger.js";
+import { AppLogger } from "./logger";
 
-import { displayValue, countSlot, decrementBtn, resetBtn } from "./dom.js";
+import { displayValue, countSlot, decrementBtn, resetBtn } from "./dom";
 
 //INFO: Current state of the counter
 let counter: CounterValue = 0;

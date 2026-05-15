@@ -1,4 +1,4 @@
-import { LogLevel } from "./types.js";
+import { LogLevel } from "./types";
 
 interface Logger {
   info(message: string, data?: any): void;
